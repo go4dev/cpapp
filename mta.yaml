@@ -10,6 +10,8 @@ modules:
   - name: cpapp-db
   - name: cpapp-uaa
   - name: cpapp-logs
+  - name: cpapp-connectivity
+  - name: cpapp-destination
   provides:
   - name: srv-api
     properties:
@@ -152,6 +154,11 @@ resources:
   type: org.cloudfoundry.managed-service
   parameters:
     service: application-logs
+    service-plan: lite
+- name: cpapp-connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
     service-plan: lite
 parameters:
   deploy_mode: html5-repo
